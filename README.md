@@ -21,10 +21,10 @@ Visit official app at: [Time$Hit](https://jaimegonzalezjr.com/Projects/timesheet
 * Vuetify (Styling Framework)
 * Strapi Headless CMS (Back-End)
 
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/main/img/ss1.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/main/img/ss2.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/main/img/ss3.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/main/img/ss4.png)
+![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss1.png)
+![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss2.png)
+![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss3.png)
+![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss4.png)
 
 
 ## Build Setup
