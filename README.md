@@ -1,6 +1,5 @@
 # Time$Hit
 
-
 ### `Time Tracking App`
 
 Time tracking app made with NuxtJS.
@@ -14,7 +13,6 @@ Visit official app at: [Time$Hit](https://jaimegonzalezjr.com/Projects/timesheet
 
 ### Username: test
 ### Password: password11
-
 
 ## Built With
 * NuxtJS (Front-End)
