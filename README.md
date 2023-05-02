@@ -29,7 +29,7 @@ Visit official app at: [Time$Hit](https://jaimegonzalezjr.com/Projects/timesheet
 
 ```bash
 # install dependencies
-$ yarn install
+$ yarn install --frozen-lockfile
 
 # serve with hot reload at localhost:3000
 $ yarn dev

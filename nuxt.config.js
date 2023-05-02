@@ -91,7 +91,7 @@ export default {
 
   // Strapi module configuration: https://strapi.nuxtjs.org/options
   strapi: {
-    url: 'https://strapi.jaimegonzalezjr.com'
+    url: process.env.API_AUTH_URL
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
