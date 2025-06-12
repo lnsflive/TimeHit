@@ -8,7 +8,7 @@ export default {
   //   base: '/Projects/timesheet/'
   // },
   router: {
-    base: '/TimeHit'
+    base: '/TimeForge'
   },
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -16,8 +16,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Time$hit',
-    title: 'Time$hit',
+    titleTemplate: '%s - TimeForge',
+    title: 'TimeForge',
     htmlAttrs: {
       lang: 'en'
     },
@@ -29,20 +29,24 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap' }
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap'
+      }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/notifier.js',
-    '~/plugins/alerter.js'
-  ],
+  plugins: ['~/plugins/notifier.js', '~/plugins/alerter.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -114,6 +118,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
