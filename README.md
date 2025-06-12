@@ -10,13 +10,6 @@ A professional time tracking application built with Nuxt.js that helps you manag
 - 👤 Customizable User Profiles
 - ⚙️ Comprehensive Settings
 
-## Screenshots
-
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss1.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss2.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss3.png)
-![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss4.png)
-
 ## Tech Stack
 
 - Frontend: Nuxt.js 2.x with Vuetify
