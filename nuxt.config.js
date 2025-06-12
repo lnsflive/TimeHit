@@ -4,9 +4,6 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
-  // router: {
-  //   base: '/Projects/timesheet/'
-  // },
   router: {
     base: '/'
   },
