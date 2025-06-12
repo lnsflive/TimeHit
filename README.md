@@ -2,6 +2,8 @@
 
 A professional time tracking application built with Nuxt.js that helps you manage work hours, mileage, and calculate expected payouts.
 
+[View Live Example](https://jaimegonzalezjr.com/Projects/TimeForge)
+
 ## Features
 
 - 📊 Time Tracking Dashboard
@@ -9,6 +11,12 @@ A professional time tracking application built with Nuxt.js that helps you manag
 - 💰 Payout Calculations (Daily, Weekly, Monthly)
 - 👤 Customizable User Profiles
 - ⚙️ Comprehensive Settings
+
+## Screenshots
+
+![Login Screen](ss1.png)
+![Time Tracking Dashboard](ss2.png)
+![Settings Page](ss3.png)
 
 ## Tech Stack
 

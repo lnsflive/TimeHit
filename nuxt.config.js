@@ -8,7 +8,7 @@ export default {
   //   base: '/Projects/timesheet/'
   // },
   router: {
-    base: '/TimeForge'
+    base: '/'
   },
 
   // Target: https://go.nuxtjs.dev/config-target
