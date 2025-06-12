@@ -20,7 +20,7 @@ A professional time tracking application built with Nuxt.js that helps you manag
 ## Prerequisites
 
 - Node.js (v14 or later recommended)
-- Yarn package manager
+- npm or yarn package manager
 - Docker (optional, for containerized Strapi)
 
 ## Setup Instructions
@@ -32,8 +32,11 @@ A professional time tracking application built with Nuxt.js that helps you manag
 git clone https://github.com/yourusername/timeforge.git
 cd timeforge
 
-# Install dependencies
-yarn install
+# Install dependencies (using npm)
+npm install --legacy-peer-deps
+
+# OR if using yarn
+yarn install --legacy-peer-deps
 
 # Create .env file
 cp .env.example .env
@@ -91,10 +94,12 @@ npx create-strapi-app@latest timeforge-backend --quickstart
 
 ```bash
 # Start Strapi backend (in timeforge-backend directory)
-yarn develop
+npm run develop
+# or yarn develop
 
 # Start Nuxt frontend (in main project directory)
-yarn dev
+npm run dev
+# or yarn dev
 ```
 
 The application will be available at: http://localhost:3000
@@ -103,10 +108,12 @@ The application will be available at: http://localhost:3000
 
 ```bash
 # Generate static files
-yarn generate
+npm run generate
+# or yarn generate
 
 # Serve the static files
-yarn start
+npm run start
+# or yarn start
 ```
 
 ## Deployment Options

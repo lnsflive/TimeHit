@@ -1,13 +1,7 @@
 <template>
   <v-container>
-    <v-dialog
-      v-model="avatarDialogue"
-    >
-      <v-form
-        ref="uploadForm"
-        class="pa-4 primary pb-16"
-        @submit.prevent="uploadToStrapi"
-      >
+    <v-dialog v-model="avatarDialogue">
+      <v-form ref="uploadForm" class="pa-4 primary pb-16" @submit.prevent="uploadToStrapi">
         <v-file-input
           persistent-placeholder
           prepend-icon="mdi-camera"
@@ -16,53 +10,35 @@
           label="Change Avatar"
           @change="checkFile"
         />
-        <v-btn type="submit" class="float-right primary">
-          Submit
-        </v-btn>
+        <v-btn type="submit" class="float-right primary"> Submit </v-btn>
       </v-form>
     </v-dialog>
 
-    <v-dialog
-      v-model="payDialogue"
-    >
-      <v-form
-        ref="uploadForm"
-        class="pa-4 primary pb-16"
-        @submit.prevent="changeRate"
-      >
+    <v-dialog v-model="payDialogue">
+      <v-form ref="uploadForm" class="pa-4 primary pb-16" @submit.prevent="changeRate">
         <v-text-field
           v-model="newRate"
           persistent-placeholder
           prepend-icon="mdi-cash"
           label="Set Pay Rate"
-          :placeholder="payRate"
+          :placeholder="String(payRate)"
         />
-        <v-btn type="submit" class="float-right primary">
-          Submit
-        </v-btn>
+        <v-btn type="submit" class="float-right primary"> Submit </v-btn>
       </v-form>
     </v-dialog>
 
     <v-list subheader color="primary" rounded>
       <v-subheader>Settings</v-subheader>
-      <v-list-item
-        @click="avatarDialogue = !avatarDialogue"
-      >
+      <v-list-item @click="avatarDialogue = !avatarDialogue">
         <v-list-item-avatar>
-          <v-img
-            :src="avatarImage"
-          />
+          <v-img :src="avatarImage" />
         </v-list-item-avatar>
         <v-list-item-title>Change Profile Picture</v-list-item-title>
         <v-list-item-icon><v-icon>mdi-pencil</v-icon></v-list-item-icon>
       </v-list-item>
-      <v-list-item
-        @click="payDialogue = !payDialogue"
-      >
+      <v-list-item @click="payDialogue = !payDialogue">
         <v-list-item-avatar>
-          <v-icon x-large color="success">
-            mdi-cash
-          </v-icon>
+          <v-icon x-large color="success"> mdi-cash </v-icon>
         </v-list-item-avatar>
         <v-list-item-title>Change Pay Rate</v-list-item-title>
         <v-list-item-icon><v-icon>mdi-pencil</v-icon></v-list-item-icon>
@@ -74,7 +50,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-
   data: () => ({
     avatarDialogue: false,
     payDialogue: false,
@@ -88,16 +63,16 @@ export default {
   computed: {
     ...mapGetters(['loggedInUser', 'avatarImage'])
   },
-  mounted () {
+  mounted() {
     this.payRate = this.loggedInUser.payRate
   },
   methods: {
-    checkFile (event) {
+    checkFile(event) {
       // eslint-disable-next-line no-console
       console.log(event)
       this.selectedFile = event
     },
-    async uploadToStrapi () {
+    async uploadToStrapi() {
       this.errors = null
       // eslint-disable-next-line prefer-const
       let formData = new FormData()
@@ -112,7 +87,7 @@ export default {
         this.$alerter.showMessage({ content: this.errors, value: 'error' })
       }
     },
-    async changeRate () {
+    async changeRate() {
       this.errors = null
       this.payDialogue = false
       try {
@@ -128,6 +103,5 @@ export default {
       }
     }
   }
-
 }
 </script>

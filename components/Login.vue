@@ -1,22 +1,10 @@
 <template>
-  <v-container
-    style="height:100%"
-    class="d-flex align-center justify-center"
-  >
-    <v-card
-      style="background:#1d204b;width:300px;padding:20px;"
-    >
-      <v-form
-        ref="form"
-        v-model="valid"
-        @submit.prevent="checkSend"
-      >
-        <v-img src="img/logo.svg" width="220px" class="mx-auto mt-8" />
+  <v-container style="height: 100%" class="d-flex align-center justify-center">
+    <v-card style="background: #1d204b; width: 300px; padding: 20px">
+      <v-form ref="form" v-model="valid" @submit.prevent="checkSend">
+        <h3 class="text-center text-h3 my-8">TimeForge</h3>
         <v-divider />
-        <v-card-text
-          style="font-size:35px;"
-          class="text-center pb-8 accent--text"
-        >
+        <v-card-text style="font-size: 35px" class="text-center pb-8 accent--text">
           {{ status }}
         </v-card-text>
         <v-text-field
@@ -76,7 +64,7 @@
           block
           :disabled="!valid"
           color="success"
-          style="height:50px;margin-top:10px;"
+          style="height: 50px; margin-top: 10px"
           type="submit"
         >
           {{ btnStatus }}
@@ -84,17 +72,12 @@
         <v-btn
           block
           color="warning"
-          style="width:100%;height:50px;margin-top:20px;"
+          style="width: 100%; height: 50px; margin-top: 20px"
           @click="clear"
         >
           reset
         </v-btn>
-        <v-btn
-          text
-          plain
-          class="float-right"
-          @click="toggleRegister"
-        >
+        <v-btn text plain class="float-right" @click="toggleRegister">
           {{ btnRegister }}
         </v-btn>
       </v-form>
@@ -118,25 +101,25 @@ export default {
     valid: false,
     email: null,
     emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      (v) => !!v || 'E-mail is required',
+      (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
     password: null,
     nameRules: [
-      v => !!v || 'Password is required',
-      v => (v && v.length >= 10) || 'Password must be more than 10 characters'
+      (v) => !!v || 'Password is required',
+      (v) => (v && v.length >= 10) || 'Password must be more than 10 characters'
     ]
   }),
   computed: {
-    counter () {
+    counter() {
       return this.$store.state.counter
     },
-    user () {
+    user() {
       return this.$strapi.user
     }
   },
   methods: {
-    async register () {
+    async register() {
       this.error = null
       try {
         this.$axios.setToken(false)
@@ -153,7 +136,7 @@ export default {
         this.$alerter.showMessage({ content: this.error, value: 'error' })
       }
     },
-    async login () {
+    async login() {
       this.error = null
       try {
         await this.$auth.loginWith('local', {
@@ -162,17 +145,20 @@ export default {
             password: this.password
           }
         })
-        this.$alerter.showMessage({ content: 'Welcome ' + this.$auth.user.username, value: 'success' })
+        this.$alerter.showMessage({
+          content: 'Welcome ' + this.$auth.user.username,
+          value: 'success'
+        })
       } catch (e) {
         this.error = e.response.data.message[0].messages[0].message
         this.$notifier.showMessage({ content: this.error, color: 'error', timeout: 3000 })
       }
     },
-    clear () {
+    clear() {
       this.$refs.form.reset()
       this.$refs.username.focus()
     },
-    toggleRegister () {
+    toggleRegister() {
       if (!this.registered) {
         this.status = 'Register'
         this.btnStatus = 'Register'
@@ -185,7 +171,7 @@ export default {
         this.registered = false
       }
     },
-    checkSend () {
+    checkSend() {
       if (this.registered) {
         this.register()
       } else {
@@ -195,9 +181,9 @@ export default {
   }
 }
 </script>
-<style >
+<style>
 .v-input input:invalid,
-input:-webkit-autofill{
+input:-webkit-autofill {
   border: none;
   -webkit-text-fill-color: #787dbf;
   box-shadow: 0 0 0px 1000px #1d204b inset;
