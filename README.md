@@ -1,43 +1,150 @@
-# Time$Hit
+# TimeForge
 
-### `Time Tracking App`
+A professional time tracking application built with Nuxt.js that helps you manage work hours, mileage, and calculate expected payouts.
 
-Time tracking app made with NuxtJS.
-#### Includes
-* Mileage Tracker
-* Expected Payouts (Daily, Weekly, Monthly)
-* Editable Avatar
-* Settings Menu
+## Features
 
-Visit official app at: [Time$Hit](https://jaimegonzalezjr.com/Projects/timesheet/).
+- 📊 Time Tracking Dashboard
+- 🚗 Mileage Tracker
+- 💰 Payout Calculations (Daily, Weekly, Monthly)
+- 👤 Customizable User Profiles
+- ⚙️ Comprehensive Settings
 
-### Username: test
-### Password: password11
-
-## Built With
-* NuxtJS (Front-End)
-* Vuetify (Styling Framework)
-* Strapi Headless CMS (Back-End)
+## Screenshots
 
 ![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss1.png)
 ![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss2.png)
 ![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss3.png)
 ![Screenshot](https://github.com/lnsflive/TimeHit/blob/master/static/img/ss4.png)
 
+## Tech Stack
 
-## Build Setup
+- Frontend: Nuxt.js 2.x with Vuetify
+- Backend: Strapi Headless CMS
+- Authentication: @nuxtjs/auth
+- Styling: Vuetify Material Design Framework
+
+## Prerequisites
+
+- Node.js (v14 or later recommended)
+- Yarn package manager
+- Docker (optional, for containerized Strapi)
+
+## Setup Instructions
+
+### 1. Frontend Setup (TimeForge)
 
 ```bash
-# install dependencies
-$ yarn install --frozen-lockfile
+# Clone the repository
+git clone https://github.com/yourusername/timeforge.git
+cd timeforge
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# Install dependencies
+yarn install
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+# Create .env file
+cp .env.example .env
 ```
+
+### 2. Environment Configuration
+
+Create a `.env` file in the root directory with the following content:
+
+```
+# Development
+API_AUTH_URL=http://localhost:1337
+NODE_ENV=development
+
+# Production (update when deploying)
+# API_AUTH_URL=https://your-strapi-instance.com
+```
+
+### 3. Strapi Backend Setup
+
+```bash
+# Create a new Strapi project
+npx create-strapi-app@latest timeforge-backend --quickstart
+
+# Once Strapi is running, create an admin account at:
+# http://localhost:1337/admin
+```
+
+#### Required Strapi Configuration:
+
+1. Create Content Types:
+
+   - TimeEntry
+
+     - date (datetime)
+     - startTime (time)
+     - endTime (time)
+     - description (text)
+     - user (relation to User)
+
+   - MileageEntry
+     - date (date)
+     - miles (decimal)
+     - description (text)
+     - user (relation to User)
+
+2. Configure Permissions:
+   - Go to Settings → Users & Permissions Plugin → Roles
+   - Edit the Authenticated role
+   - Enable necessary CRUD operations for TimeEntry and MileageEntry
+
+### 4. Running the Application
+
+#### Development Mode
+
+```bash
+# Start Strapi backend (in timeforge-backend directory)
+yarn develop
+
+# Start Nuxt frontend (in main project directory)
+yarn dev
+```
+
+The application will be available at: http://localhost:3000
+
+#### Production Build
+
+```bash
+# Generate static files
+yarn generate
+
+# Serve the static files
+yarn start
+```
+
+## Deployment Options
+
+### Frontend Deployment
+
+You can deploy the static frontend to:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
+
+### Backend Deployment
+
+For Strapi, you can:
+
+- Use a Platform-as-a-Service (PaaS) like Heroku
+- Deploy to a VPS
+- Use managed services like DigitalOcean App Platform
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Built with Nuxt.js
+- Styled with Vuetify
+- Powered by Strapi CMS
